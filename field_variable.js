@@ -77,6 +77,10 @@ Blockly.FieldVariable.dropdownCreate = function() {
   variableList.sort(Blockly.caseInsensitiveComparator);
   variableList.push(Blockly.MSG_RENAME_VARIABLE);
   variableList.push(Blockly.MSG_NEW_VARIABLE);
+
+  //Change 'push' to 'unshift' so that New Variable and Rename Variable are displayed on the top of the dropdown 
+  variableList.unshift(Blockly.MSG_NEW_VARIABLE, Blockly.MSG_RENAME_VARIABLE);
+
   // Variables are not language-specific, use the name as both the user-facing
   // text and the internal representation.
   var options = [];
